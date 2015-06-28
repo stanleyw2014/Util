@@ -53,7 +53,7 @@ public class Util {
     }
 
     public static void main(String[] args)  throws IOException{
-        //getXmlString();
+
         String result=doPost("http://sandbox.xml-ycs.agoda.com/xmlservice.aspx",getXmlString());
         System.out.println(result);
     }
