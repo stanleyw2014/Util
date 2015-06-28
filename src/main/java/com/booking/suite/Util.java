@@ -9,11 +9,17 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.jdom2.Document;
 import org.jdom2.Element;
+import org.jdom2.JDOMException;
 import org.jdom2.Namespace;
+import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.XMLOutputter;
+import org.xml.sax.InputSource;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Stanley on 6/28/2015.
@@ -49,6 +55,23 @@ public class Util {
         HttpEntity entity = response.getEntity();
         //System.out.println(EntityUtils.toString(entity));
         return EntityUtils.toString(entity);
+
+    }
+
+    public static String parseXML(String XMLString) throws JDOMException, IOException {
+        StringReader xmlReader=new StringReader(XMLString);
+        InputSource xmlSource=new InputSource(xmlReader);
+        SAXBuilder xmlBuilder=new SAXBuilder();
+        Document doc=xmlBuilder.build(xmlSource);
+        Element rootEle=doc.getRootElement();
+        List<Element> eleList=rootEle.getChildren();
+        for(Element ele:eleList){
+            if(ele.hasAttributes())
+            {
+
+            }
+        }
+        return null;
 
     }
 
