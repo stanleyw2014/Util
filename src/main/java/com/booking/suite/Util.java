@@ -31,7 +31,7 @@ public class Util {
         Element req=new Element("GetAllLanguagesRequest",ns);
         Element auth=new Element("Authentication");
         auth.setAttribute("APIKey","a81016e4-b356-4ce6-87b2-bdfcc3270832");
-        auth.setAttribute("HotelID","148832");
+        auth.setAttribute("HotelID","14882");
         req.addContent(auth);
         req.addContent(new Element("RequestedLanguage").setText("en"));
         Document doc=new Document(req);
